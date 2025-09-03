@@ -264,7 +264,7 @@ export default function ITSupportPage() {
               </div>
             </div>
             <p className="text-sm text-muted-foreground text-center md:text-right">
-              © 2024 NOVEM.sk. Všetky práva vyhradené.
+              © 2025 NOVEM.sk. Všetky práva vyhradené.
             </p>
           </div>
         </div>

@@ -194,26 +194,7 @@ export default function ITSupportPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">info@novem.sk</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">Adresa</h3>
-                    <p className="text-muted-foreground">Bratislava, Slovensko</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">Pracovné hodiny</h3>
-                    <p className="text-muted-foreground">Po-Pi: 8:00 - 18:00</p>
-                    <p className="text-muted-foreground">So: 9:00 - 14:00</p>
+                    <p className="text-muted-foreground">podpora@novem.sk</p>
                   </div>
                 </div>
               </div>

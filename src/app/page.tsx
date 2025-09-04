@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, MapPin, Monitor, Server, Shield, Wrench, Clock, CheckCircle } from "lucide-react"
 import { SupportButton } from "@/components/support-button"
 import { CallButton } from "@/components/call-button"
+import { ScrollSupportButton } from "@/components/scroll-support-button"
 
 export default function ITSupportPage() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -81,6 +82,7 @@ export default function ITSupportPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <CallButton />
+                <ScrollSupportButton />
               </div>
             </div>
             <div className="relative">
@@ -160,7 +162,7 @@ export default function ITSupportPage() {
       </section>
 
       {/* Remote Support Section */}
-      <section className="py-16 px-4 bg-muted/50">
+      <section id="remote-support" className="py-16 px-4 bg-muted/50">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-foreground mb-4">Vzdialená podpora</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">

@@ -96,6 +96,37 @@ export default function ITSupportPage() {
         </div>
       </section>
 
+      {/* Contact Info Section (side by side, centered, larger fonts) */}
+      <section className="py-8 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+            <div className="flex-1 flex flex-col justify-center items-center">
+              <h2 className="text-4xl font-extrabold text-foreground mb-8 text-center">Kontaktujte nás</h2>
+              <div className="flex flex-row gap-12 justify-center items-center">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-2xl text-foreground mb-1">Hotline 24/7</h3>
+                    <p className="text-xl text-muted-foreground font-semibold">+421 2 20 20 22 22</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-2xl text-foreground mb-1">Email</h3>
+                    <p className="text-xl text-muted-foreground font-semibold">podpora@novem.sk</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
@@ -175,33 +206,10 @@ export default function ITSupportPage() {
       </section>
 
       {/* Contact Section */}
+      {/* Contact Section */}
       <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-bold text-foreground mb-6">Kontaktujte nás</h2>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">Hotline 24/7</h3>
-                    <p className="text-muted-foreground">+421 2 20 20 22 22</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">podpora@novem.sk</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+        <div className="container mx-auto max-w-6xl flex justify-center">
+          <div className="w-full max-w-xl">
             <Card>
               <CardHeader>
                 <CardTitle>Napíšte nám</CardTitle>

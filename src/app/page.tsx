@@ -48,18 +48,18 @@ export default function ITSupportPage() {
       <header className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <Monitor className="h-6 w-6 text-primary-foreground" />
+            <div className="w-50 h-25 flex items-center justify-center">
+              <img src="/logo.png" alt="Logo" />
             </div>
-            <div>
+            {/* <div>
               <h1 className="text-xl font-bold text-foreground">NOVEM.sk</h1>
               <p className="text-sm text-muted-foreground">IT po novom</p>
-            </div>
+            </div> */}
           </div>
           <div className="flex items-center space-x-6">
             <a href="tel:+421220202222" className="hidden md:flex items-center space-x-2 text-sm">
-              <Phone className="h-4 w-4 text-primary" />
-              <span className="text-foreground">+421 2 20 20 22 22</span>
+              <Phone className="h-6 w-6 text-primary" />
+              <h3 className="text-foreground text-xl font-bold">+421 2 20 20 22 22</h3>
             </a>
           </div>
         </div>

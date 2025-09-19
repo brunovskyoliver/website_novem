@@ -166,7 +166,7 @@ export default function ITSupportPage() {
                 <CardTitle className="text-lg">Bezpečnostné riešenia</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-center">Bezpečnostné riešenia a ochrana a záloha dát</CardDescription>
+                <CardDescription className="text-center">Bezpečnostné riešenia, ochrana a záloha dát</CardDescription>
               </CardContent>
             </Card>
 

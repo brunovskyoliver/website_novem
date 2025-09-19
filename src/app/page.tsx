@@ -73,28 +73,28 @@ export default function ITSupportPage() {
               <Badge className="bg-accent/10 text-accent border-accent/20 hover:bg-accent/20">
                 Profesionálny IT servis
               </Badge>
-              <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight text-balance">
+              <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight text-balance text-center lg:text-left">
                 Potrebujete pomoc s Vašim IT vybavením?
               </h1>
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
             <div className="flex-1 flex flex-col justify-center items-center">
               <h3 className="text-4xl font-extrabold text-foreground mb-8 text-center">Kontaktujte nás</h3>
-              <div className="flex flex-row gap-12 justify-center items-center">
-                <div className="flex items-start space-x-4">
+              <div className="flex flex-col md:flex-row gap-8 md:gap-12 justify-center items-center w-full">
+                <div className="flex items-center space-x-4 justify-center mb-6 md:mb-0">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
-                  <div>
+                  <div className="text-center md:text-left">
                     <h3 className="font-bold text-2xl text-foreground mb-1">Hotline 24/7</h3>
                     <p className="text-xl text-muted-foreground font-semibold">+421 2 20 20 22 22</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
+                <div className="flex items-center space-x-4 justify-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
-                  <div>
+                  <div className="text-center md:text-left">
                     <h3 className="font-bold text-2xl text-foreground mb-1">Email</h3>
                     <p className="text-xl text-muted-foreground font-semibold">podpora@novem.sk</p>
                   </div>
@@ -227,6 +227,14 @@ export default function ITSupportPage() {
               <h3 className="text-xl font-semibold mb-2">Kontaktné údaje</h3>
               <p className="text-muted-foreground leading-tight">novem@novem.sk</p>
               <p className="text-muted-foreground leading-tight">+421 2 20 20 22 22</p>
+              <div className="">
+<br/>
+<br/>
+              <h3 className="text-xl font-semibold mb-2">Centrála spoločnosti</h3>
+                <p className="text-muted-foreground leading-tight">NOVEM - Centrála</p>
+                <p className="text-muted-foreground leading-tight">Reca 717</p>
+                <p className="text-muted-foreground leading-tight">925 26 Reca</p>
+                </div>
             </div>
             <div className="space-y-2">
               <h3 className="text-xl font-semibold mb-2">Fakturačné údaje</h3>
@@ -239,10 +247,8 @@ export default function ITSupportPage() {
               <p className="text-muted-foreground leading-tight">IČ DPH: SK2120427078</p>
               <br></br>
               <div>
-                <p className="text-muted-foreground leading-tight">Centrála spoločnosti:</p>
-                <p className="text-muted-foreground leading-tight">NOVEM - Centrála</p>
-                <p className="text-muted-foreground leading-tight">Reca 717</p>
-                <p className="text-muted-foreground leading-tight">925 26 Reca</p>
+                
+                
 
                 <div className="mt-3">
                 <p className="text-muted-foreground leading-tight">
@@ -267,8 +273,8 @@ export default function ITSupportPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <Monitor className="h-5 w-5 text-primary-foreground" />
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                <img className="h-8 w-8" alt="logo" src="/logo_.png"/>
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">NOVEM.sk</h3>

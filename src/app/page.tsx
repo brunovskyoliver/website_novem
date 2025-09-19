@@ -238,7 +238,7 @@ export default function ITSupportPage() {
               <p className="text-muted-foreground leading-tight">DIČ: 2120427078</p>
               <p className="text-muted-foreground leading-tight">IČ DPH: SK2120427078</p>
               <br></br>
-              <div className="mt-3">
+              <div>
                 <p className="text-muted-foreground leading-tight">Centrála spoločnosti:</p>
                 <p className="text-muted-foreground leading-tight">NOVEM - Centrála</p>
                 <p className="text-muted-foreground leading-tight">Reca 717</p>

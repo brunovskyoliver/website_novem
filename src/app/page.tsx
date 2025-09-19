@@ -74,34 +74,12 @@ export default function ITSupportPage() {
                 Profesionálny IT servis
               </Badge>
               <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight text-balance">
-                Potrebujete pomoc s opravou PC?
+                Potrebujete pomoc s Vašim IT vybavením?
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                V našej spoločnosti sme odborníci v oblasti IT servisu a správy serverov. Poskytujeme komplexné riešenia
-                pre vaše podnikanie v oblasti IT infraštruktúry.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <CallButton />
-                <ScrollSupportButton />
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="/img_novem.png"
-                alt="IT Support Services"
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Info Section (side by side, centered, larger fonts) */}
-      <section className="py-8 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
             <div className="flex-1 flex flex-col justify-center items-center">
-              <h2 className="text-4xl font-extrabold text-foreground mb-8 text-center">Kontaktujte nás</h2>
+              <h3 className="text-4xl font-extrabold text-foreground mb-8 text-center">Kontaktujte nás</h3>
               <div className="flex flex-row gap-12 justify-center items-center">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -125,6 +103,28 @@ export default function ITSupportPage() {
             </div>
           </div>
         </div>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                V našej spoločnosti sme odborníci v oblasti IT servisu a správy serverov. Poskytujeme komplexné riešenia
+                pre vaše podnikanie v oblasti IT infraštruktúry.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <CallButton />
+                <ScrollSupportButton />
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="/img_novem.png"
+                alt="IT Support Services"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info Section (side by side, centered, larger fonts) */}
+      <section className="py-8 px-4">
       </section>
 
       {/* Services Section */}

@@ -123,9 +123,6 @@ export default function ITSupportPage() {
         </div>
       </section>
 
-      {/* Contact Info Section (side by side, centered, larger fonts) */}
-      <section className="py-8 px-4">
-      </section>
 
       {/* Services Section */}
       <section className="py-16 px-4">
@@ -197,7 +194,7 @@ export default function ITSupportPage() {
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-foreground mb-4">Vzdialená podpora</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Ak máte problém s podporou, naši technickí pracovníci Vám vedia pomôcť aj na diaľku. Kliknite na tlačidlo nižšie pre spustenie vzdialenej podpory.
+            Ak máte problém s podporou, naši kolegovia Vám vedia pomôcť aj na diaľku. Kliknite na tlačidlo nižšie pre spustenie vzdialenej podpory.
           </p>
           <div className="flex justify-center">
             <SupportButton />

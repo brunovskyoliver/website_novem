@@ -194,7 +194,7 @@ export default function ITSupportPage() {
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-foreground mb-4">Vzdialená podpora</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Ak máte problém s podporou, naši kolegovia Vám vedia pomôcť aj na diaľku. Kliknite na tlačidlo nižšie pre spustenie vzdialenej podpory.
+            Ak máte problém s IT technikou, naši kolegovia Vám radi pomôžu. Kliknite na tlačidlo nižšie pre spustenie vzdialenej podpory.
           </p>
           <div className="flex justify-center">
             <SupportButton />

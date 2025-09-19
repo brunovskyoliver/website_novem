@@ -230,7 +230,6 @@ export default function ITSupportPage() {
             </div>
             <div className="space-y-2">
               <h3 className="text-xl font-semibold mb-2">Fakturačné údaje</h3>
-              <br/>
               <p className="text-muted-foreground leading-tight">NOVEM-IT, s.r.o.</p>
               <p className="text-muted-foreground leading-tight">Sídlo: Lichnerova 35</p>
               <p className="text-muted-foreground leading-tight">903 01 Senec</p>

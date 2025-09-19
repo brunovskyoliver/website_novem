@@ -230,16 +230,26 @@ export default function ITSupportPage() {
             </div>
             <div className="space-y-2">
               <h3 className="text-xl font-semibold mb-2">Fakturačné údaje</h3>
+              <br/>
               <p className="text-muted-foreground leading-tight">NOVEM-IT, s.r.o.</p>
               <p className="text-muted-foreground leading-tight">Sídlo: Lichnerova 35</p>
               <p className="text-muted-foreground leading-tight">903 01 Senec</p>
+              <br></br>
               <p className="text-muted-foreground leading-tight">IČO: 50 282 859</p>
               <p className="text-muted-foreground leading-tight">DIČ: 2120427078</p>
-              <p className="text-muted-foreground leading-tight">DPH: SK2120427078</p>
+              <p className="text-muted-foreground leading-tight">IČ DPH: SK2120427078</p>
+              <br></br>
               <div className="mt-3">
+                <p className="text-muted-foreground leading-tight">Centrála spoločnosti:</p>
                 <p className="text-muted-foreground leading-tight">NOVEM - Centrála</p>
                 <p className="text-muted-foreground leading-tight">Reca 717</p>
                 <p className="text-muted-foreground leading-tight">925 26 Reca</p>
+
+                <div className="mt-3">
+                <p className="text-muted-foreground leading-tight">
+                  Zápis v Obchodnom registri Mestského súdu Bratislava 3 Vložka číslo 115272/B
+                </p>
+              </div>
               </div>
             </div>
             <div className="space-y-2">
@@ -247,11 +257,7 @@ export default function ITSupportPage() {
               <p className="text-muted-foreground leading-tight">Účet: 51 2520 7075 / 0900</p>
               <p className="text-muted-foreground leading-tight">IBAN: SK63 0900 0000 0051 2520 7075</p>
               <p className="text-muted-foreground leading-tight">SWIFT: GIBASKBX</p>
-              <div className="mt-3">
-                <p className="text-muted-foreground leading-tight">
-                  Zápis v Obchodnom registri Mestského súdu Bratislava 3 Vložka číslo 115272/B
-                </p>
-              </div>
+              
             </div>
           </div>
         </div>

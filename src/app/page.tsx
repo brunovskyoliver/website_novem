@@ -9,6 +9,7 @@ import { Phone, Mail, MapPin, Monitor, Server, Shield, Wrench, Clock, CheckCircl
 import { SupportButton } from "@/components/support-button"
 import { CallButton } from "@/components/call-button"
 import { ScrollSupportButton } from "@/components/scroll-support-button"
+import { HeaderContact } from "@/components/header-contact"
 
 export default function ITSupportPage() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -56,12 +57,7 @@ export default function ITSupportPage() {
               <p className="text-sm text-muted-foreground">IT po novom</p>
             </div> */}
           </div>
-          <div className="flex items-center space-x-6">
-            <a href="tel:+421220202222" className="hidden md:flex items-center space-x-2 text-sm">
-              <Phone className="h-6 w-6 text-primary" />
-              <h3 className="text-foreground text-xl font-bold">+421 2 20 20 22 22</h3>
-            </a>
-          </div>
+          <HeaderContact />
         </div>
       </header>
 
@@ -153,11 +149,11 @@ export default function ITSupportPage() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Server className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-lg">Návrh, realizácia, správa</CardTitle>
+                <CardTitle className="text-lg">Návrh, realizácia, monitoring</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-center">
-                  Návrh a implementácia IT infraštruktúry pre firmy
+                  Návrh a implementácia IT infraštruktúry pre firmy, monitoring a správa serverov
                 </CardDescription>
               </CardContent>
             </Card>
@@ -167,10 +163,10 @@ export default function ITSupportPage() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Shield className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-lg">Návrh, realizácia, správa</CardTitle>
+                <CardTitle className="text-lg">Bezpečnostné riešenia</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-center">Bezpečnostné riešenia a ochrana dát</CardDescription>
+                <CardDescription className="text-center">Bezpečnostné riešenia a ochrana a záloha dát</CardDescription>
               </CardContent>
             </Card>
 
@@ -179,10 +175,10 @@ export default function ITSupportPage() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Wrench className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-lg">Návrh, realizácia</CardTitle>
+                <CardTitle className="text-lg">Dizajn siete</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-center">Serverových riešení a sieťovej infraštruktúry</CardDescription>
+                <CardDescription className="text-center">Služby v oblasti návrhu a implementácie a monitoringu sieťovej infraštruktúry</CardDescription>
               </CardContent>
             </Card>
           </div>
@@ -222,8 +218,8 @@ export default function ITSupportPage() {
       <section className="py-16 px-4 bg-muted/50">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Kontaktné údaje</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="space-y-2">
+          <div className="grid md:grid-cols-3 gap-8 text-center md:text-left justify-center">
+            <div className="space-y-2 flex flex-col items-center md:items-start">
               <h3 className="text-xl font-semibold mb-2">Kontaktné údaje</h3>
               <p className="text-muted-foreground leading-tight">novem@novem.sk</p>
               <p className="text-muted-foreground leading-tight">+421 2 20 20 22 22</p>
@@ -236,7 +232,7 @@ export default function ITSupportPage() {
                 <p className="text-muted-foreground leading-tight">925 26 Reca</p>
                 </div>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 flex flex-col items-center md:items-start">
               <h3 className="text-xl font-semibold mb-2">Fakturačné údaje</h3>
               <p className="text-muted-foreground leading-tight">NOVEM-IT, s.r.o.</p>
               <p className="text-muted-foreground leading-tight">Sídlo: Lichnerova 35</p>

@@ -1,48 +1,16 @@
-import { Button } from "@/components/ui/button"
+import Image from "next/image"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
 import { ContactFormContent } from "./contact-form"
 import { Badge } from "@/components/ui/badge"
-import { Phone, Mail, MapPin, Monitor, Server, Shield, Wrench, Clock, CheckCircle } from "lucide-react"
+import { Phone, Mail, Monitor, Server, Shield, Wrench } from "lucide-react"
 import { SupportButton } from "@/components/support-button"
 import { CallButton } from "@/components/call-button"
 import { ScrollSupportButton } from "@/components/scroll-support-button"
 import { HeaderContact } from "@/components/header-contact"
+import { OdooPartnerPopover } from "@/components/odoo-partner-popover"
 
 export default function ITSupportPage() {
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    
-    const formData = new FormData(event.currentTarget);
-    const data = {
-      name: `${formData.get('firstName')} ${formData.get('lastName')}`,
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      message: formData.get('message'),
-    };
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        alert('Správa bola úspešne odoslaná!');
-        event.currentTarget.reset();
-      } else {
-        throw new Error('Something went wrong');
-      }
-    } catch (error) {
-      alert('Prepáčte, nastala chyba pri odosielaní správy. Skúste to prosím neskôr.');
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -50,7 +18,7 @@ export default function ITSupportPage() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="w-50 h-25 flex items-center justify-center">
-              <img src="/logo.png" alt="Logo" />
+              <Image src="/logo.png" alt="NOVEM.sk" width={200} height={56} priority />
             </div>
             {/* <div>
               <h1 className="text-xl font-bold text-foreground">NOVEM.sk</h1>
@@ -109,9 +77,12 @@ export default function ITSupportPage() {
               </div>
             </div>
             <div className="relative">
-              <img
+              <Image
                 src="/img_novem.png"
-                alt="IT Support Services"
+                alt="Ilustrácia správy IT infraštruktúry"
+                width={961}
+                height={609}
+                priority
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
@@ -199,8 +170,7 @@ export default function ITSupportPage() {
       </section>
 
       {/* Contact Section */}
-      {/* Contact Section */}
-      <section className="py-16 px-4">
+      <section id="kontakt" className="scroll-mt-24 py-16 px-4">
         <div className="container mx-auto max-w-6xl flex justify-center">
           <div className="w-full max-w-xl">
             <Card>
@@ -270,7 +240,7 @@ export default function ITSupportPage() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
               <div className="w-8 h-8 rounded-lg flex items-center justify-center">
-                <img className="h-8 w-8" alt="logo" src="/logo_.png"/>
+                <Image className="h-8 w-8" alt="" src="/logo_.png" width={32} height={32} />
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">NOVEM.sk</h3>
@@ -283,6 +253,7 @@ export default function ITSupportPage() {
           </div>
         </div>
       </footer>
+      <OdooPartnerPopover />
     </div>
   )
 }

@@ -79,7 +79,7 @@ export function OdooPartnerPopover() {
         <PopoverTrigger asChild>
           <Button
             variant="outline"
-            className="h-auto min-h-14 rounded-2xl border-primary/25 bg-background px-3.5 py-2.5 text-foreground shadow-xl shadow-slate-950/10 transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 hover:border-primary/50 hover:bg-muted hover:text-foreground data-[state=open]:pointer-events-none data-[state=open]:translate-y-1 data-[state=open]:scale-95 data-[state=open]:opacity-0 motion-reduce:transition-none"
+            className="h-auto min-h-14 rounded-2xl border-primary/25 bg-background px-3.5 py-2.5 text-foreground shadow-xl shadow-slate-950/10 transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 hover:border-primary/50 hover:bg-muted hover:text-foreground data-[state=open]:translate-y-1 data-[state=open]:scale-95 data-[state=open]:opacity-0 motion-reduce:transition-none"
             aria-label="Otvoriť informácie o Odoo službách NOVEM"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

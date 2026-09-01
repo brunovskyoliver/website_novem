@@ -27,12 +27,12 @@ export function OdooPartnerPopover() {
         <PopoverTrigger asChild>
           <Button
             variant="outline"
-            className="h-auto min-h-14 rounded-2xl border-primary/25 bg-background px-3.5 py-2.5 text-foreground shadow-xl shadow-slate-950/10 hover:border-primary/50 hover:bg-muted"
+            className="h-auto min-h-14 rounded-2xl border-primary/25 bg-background px-3.5 py-2.5 text-foreground shadow-xl shadow-slate-950/10 hover:border-primary/50 hover:bg-muted data-[state=open]:invisible"
             aria-label="Otvoriť informácie o Odoo službách NOVEM"
           >
             <span className="border-l-2 border-[#714b67] pl-3 text-left leading-tight">
               <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">NOVEM × Odoo</span>
-              <span className="mt-1 block text-sm font-semibold">Odoo pre vašu firmu</span>
+              <span className="mt-1 block text-sm font-semibold">ERP pre vašu firmu</span>
             </span>
             <ArrowUpRight data-icon="inline-end" aria-hidden="true" />
           </Button>
@@ -71,15 +71,15 @@ export function OdooPartnerPopover() {
           <div className="flex flex-col gap-5 p-5">
             <PopoverHeader className="gap-2">
               <PopoverTitle id={titleId} className="text-balance text-xl font-semibold tracking-tight text-foreground">
-                Odoo poznáme z vlastnej prevádzky.
+                Hľadáte ERP systém pre svoju firmu?
               </PopoverTitle>
               <PopoverDescription id={descriptionId} className="text-pretty text-sm leading-6">
-                Pomôžeme vám s nasadením, podporou používateľov aj technickým zázemím celého riešenia.
+                Pomôžeme vám vybrať a nasadiť ERP, ktoré spojí obchod, fakturáciu, sklad aj interné procesy.
               </PopoverDescription>
             </PopoverHeader>
             <Button asChild size="lg" className="h-11 w-full justify-between rounded-xl">
               <Link href="/odoo">
-                Pozrieť Odoo služby
+                Pozrieť riešenie NOVEM × Odoo
                 <ArrowRight data-icon="inline-end" aria-hidden="true" />
               </Link>
             </Button>

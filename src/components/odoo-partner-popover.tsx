@@ -1,6 +1,6 @@
 "use client"
 
-import { useId } from "react"
+import { useEffect, useId, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ArrowUpRight, X } from "lucide-react"
@@ -17,22 +17,76 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
+const INTRO_DURATION_MS = 10_000
+const HOVER_CLOSE_DELAY_MS = 180
+
 export function OdooPartnerPopover() {
   const titleId = useId()
   const descriptionId = useId()
+  const [open, setOpen] = useState(true)
+  const introActiveRef = useRef(true)
+  const hoveringRef = useRef(false)
+  const introTimerRef = useRef<number | null>(null)
+  const closeTimerRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    introTimerRef.current = window.setTimeout(() => {
+      introActiveRef.current = false
+
+      if (!hoveringRef.current) setOpen(false)
+    }, INTRO_DURATION_MS)
+
+    return () => {
+      if (introTimerRef.current !== null) window.clearTimeout(introTimerRef.current)
+      if (closeTimerRef.current !== null) window.clearTimeout(closeTimerRef.current)
+    }
+  }, [])
+
+  function cancelCloseTimer() {
+    if (closeTimerRef.current === null) return
+
+    window.clearTimeout(closeTimerRef.current)
+    closeTimerRef.current = null
+  }
+
+  function handleMouseEnter() {
+    hoveringRef.current = true
+    cancelCloseTimer()
+    setOpen(true)
+  }
+
+  function handleMouseLeave() {
+    hoveringRef.current = false
+    if (introActiveRef.current) return
+
+    cancelCloseTimer()
+    closeTimerRef.current = window.setTimeout(() => setOpen(false), HOVER_CLOSE_DELAY_MS)
+  }
+
+  function handleOpenChange(nextOpen: boolean) {
+    if (!nextOpen) {
+      introActiveRef.current = false
+      if (introTimerRef.current !== null) window.clearTimeout(introTimerRef.current)
+      cancelCloseTimer()
+    }
+
+    setOpen(nextOpen)
+  }
 
   return (
     <div className="fixed bottom-5 right-4 z-40 sm:bottom-6 sm:right-6">
-      <Popover>
+      <Popover open={open} onOpenChange={handleOpenChange}>
         <PopoverTrigger asChild>
           <Button
             variant="outline"
-            className="h-auto min-h-14 rounded-2xl border-primary/25 bg-background px-3.5 py-2.5 text-foreground shadow-xl shadow-slate-950/10 hover:border-primary/50 hover:bg-muted data-[state=open]:invisible"
+            className="h-auto min-h-14 rounded-2xl border-primary/25 bg-background px-3.5 py-2.5 text-foreground shadow-xl shadow-slate-950/10 transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 hover:border-primary/50 hover:bg-muted hover:text-foreground data-[state=open]:pointer-events-none data-[state=open]:translate-y-1 data-[state=open]:scale-95 data-[state=open]:opacity-0 motion-reduce:transition-none"
             aria-label="Otvoriť informácie o Odoo službách NOVEM"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
             <span className="border-l-2 border-[#714b67] pl-3 text-left leading-tight">
               <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">NOVEM × Odoo</span>
-              <span className="mt-1 block text-sm font-semibold">ERP pre vašu firmu</span>
+              <span className="mt-1 block text-sm font-semibold text-foreground">ERP pre vašu firmu</span>
             </span>
             <ArrowUpRight data-icon="inline-end" aria-hidden="true" />
           </Button>
@@ -44,6 +98,9 @@ export function OdooPartnerPopover() {
           aria-labelledby={titleId}
           aria-describedby={descriptionId}
           className="w-[min(24rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-border bg-popover p-0 shadow-2xl shadow-slate-950/15"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onOpenAutoFocus={(event) => event.preventDefault()}
         >
           <div className="relative isolate h-36 overflow-hidden bg-slate-900">
             <Image

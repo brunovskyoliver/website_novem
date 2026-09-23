@@ -20,14 +20,15 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
   }
 
   return (
-    <label className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full border border-current/15 bg-white/75 px-3 text-sm font-medium text-foreground shadow-sm focus-within:ring-2 focus-within:ring-primary/40 sm:h-11">
-      <Globe2 className="size-4 text-primary" aria-hidden="true" />
+    <label className="relative inline-flex h-10 min-w-36 shrink-0 items-center justify-center gap-1.5 rounded-full border border-current/15 bg-white/75 px-3 text-sm font-medium text-foreground shadow-sm focus-within:ring-2 focus-within:ring-primary/40 sm:h-11">
+      <Globe2 className="size-4 shrink-0 text-primary" aria-hidden="true" />
+      <span aria-hidden="true">{languageNames[locale]}</span>
       <span className="sr-only">{locale === "sk" ? "Jazyk" : locale === "de" ? "Sprache" : "Language"}</span>
       <select
         aria-label={locale === "sk" ? "Jazyk" : locale === "de" ? "Sprache" : "Language"}
         value={locale}
         onChange={(event) => changeLanguage(event.target.value)}
-        className="max-w-[7rem] cursor-pointer appearance-none bg-transparent pr-1 outline-none sm:max-w-none"
+        className="absolute inset-0 size-full cursor-pointer opacity-0"
       >
         {Object.entries(languageNames).map(([code, name]) => <option key={code} value={code}>{name}</option>)}
       </select>

@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 }
 
 export default function OdooPage() {
-  return <OdooLanding />
+  return <OdooLanding locale="sk" />
 }

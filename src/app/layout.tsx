@@ -1,3 +1,5 @@
+import { headers } from "next/headers";
+import { isLocale } from "@/lib/i18n";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ToastProvider } from "@/components/toast-provider";
@@ -20,13 +22,15 @@ export const metadata: Metadata = {
   description: "NOVEM-IT, s.r.o. | IT Servis",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const localeHeader = (await headers()).get("x-novem-locale") ?? "sk";
+  const locale = isLocale(localeHeader) ? localeHeader : "sk";
   return (
-    <html lang="sk" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning

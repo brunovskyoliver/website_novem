@@ -1,5 +1,7 @@
 "use client"
 
+import { t, type Locale } from "@/lib/i18n"
+
 import { useEffect, useId, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
@@ -20,7 +22,7 @@ import {
 const INTRO_DURATION_MS = 10_000
 const HOVER_CLOSE_DELAY_MS = 180
 
-export function OdooPartnerPopover() {
+export function OdooPartnerPopover({ locale }: { locale: Locale }) {
   const titleId = useId()
   const descriptionId = useId()
   const [open, setOpen] = useState(true)
@@ -80,13 +82,13 @@ export function OdooPartnerPopover() {
           <Button
             variant="outline"
             className="h-auto min-h-14 rounded-2xl border-primary/25 bg-background px-3.5 py-2.5 text-foreground shadow-xl shadow-slate-950/10 transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 hover:border-primary/50 hover:bg-muted hover:text-foreground data-[state=open]:translate-y-1 data-[state=open]:scale-95 data-[state=open]:opacity-0 motion-reduce:transition-none"
-            aria-label="Otvoriť informácie o Odoo službách NOVEM"
+            aria-label={t(locale, "Otvoriť informácie o Odoo službách NOVEM")}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             <span className="border-l-2 border-[#714b67] pl-3 text-left leading-tight">
               <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">NOVEM × Odoo</span>
-              <span className="mt-1 block text-sm font-semibold text-foreground">ERP pre vašu firmu</span>
+              <span className="mt-1 block text-sm font-semibold text-foreground">{t(locale, "ERP pre vašu firmu")}</span>
             </span>
             <ArrowUpRight data-icon="inline-end" aria-hidden="true" />
           </Button>
@@ -105,14 +107,14 @@ export function OdooPartnerPopover() {
           <div className="relative isolate h-36 overflow-hidden bg-slate-900">
             <Image
               src="/novem-team.webp"
-              alt="Tím NOVEM"
+              alt={t(locale, "Tím NOVEM")}
               fill
               sizes="(max-width: 640px) calc(100vw - 2rem), 384px"
               className="object-cover object-[center_42%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-slate-950/10" aria-hidden="true" />
             <PopoverClose asChild>
-              <Button variant="secondary" size="icon" className="absolute right-3 top-3 rounded-full bg-white/90 text-slate-950 hover:bg-white" aria-label="Zavrieť okno">
+              <Button variant="secondary" size="icon" className="absolute right-3 top-3 rounded-full bg-white/90 text-slate-950 hover:bg-white" aria-label={t(locale, "Zavrieť okno")}>
                 <X data-icon="inline-start" aria-hidden="true" />
               </Button>
             </PopoverClose>
@@ -122,21 +124,21 @@ export function OdooPartnerPopover() {
                 <span className="text-white/55">×</span>
                 <span className="text-sm font-semibold tracking-wide">NOVEM</span>
               </div>
-              <Badge variant="secondary" className="bg-white/90 text-slate-950">Odoo partner</Badge>
+              <Badge variant="secondary" className="bg-white/90 text-slate-950">{t(locale, "Odoo partner")}</Badge>
             </div>
           </div>
           <div className="flex flex-col gap-5 p-5">
             <PopoverHeader className="gap-2">
               <PopoverTitle id={titleId} className="text-balance text-xl font-semibold tracking-tight text-foreground">
-                Hľadáte ERP systém pre svoju firmu?
+                {t(locale, "Hľadáte ERP systém pre svoju firmu?")}
               </PopoverTitle>
               <PopoverDescription id={descriptionId} className="text-pretty text-sm leading-6">
-                Pomôžeme vám vybrať a nasadiť ERP, ktoré spojí obchod, fakturáciu, sklad aj interné procesy.
+                {t(locale, "Pomôžeme vám vybrať a nasadiť ERP, ktoré spojí obchod, fakturáciu, sklad aj interné procesy.")}
               </PopoverDescription>
             </PopoverHeader>
             <Button asChild size="lg" className="h-11 w-full justify-between rounded-xl">
-              <Link href="/odoo">
-                Pozrieť riešenie NOVEM × Odoo
+              <Link href={`/${locale}/odoo`}>
+                {t(locale, "Pozrieť riešenie NOVEM × Odoo")}
                 <ArrowRight data-icon="inline-end" aria-hidden="true" />
               </Link>
             </Button>

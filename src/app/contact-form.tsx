@@ -1,5 +1,7 @@
 'use client';
 
+import { t, type Locale } from "@/lib/i18n"
+
 import { Button } from "@/components/ui/button";
 import { CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle, X } from "lucide-react";
 import { toast } from 'sonner';
 
-export function ContactFormContent() {
+export function ContactFormContent({ locale }: { locale: Locale }) {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     
@@ -40,17 +42,17 @@ export function ContactFormContent() {
       };
 
       toast.promise(promise(), {
-        loading: 'Odosielam správu...',
+        loading: t(locale, 'Odosielam správu...'),
         success: () => (
           <div className="flex items-center gap-2">
             <CheckCircle className="h-4 w-4 text-green-500" />
-            <span>Správa bola úspešne odoslaná!</span>
+            <span>{t(locale, "Správa bola úspešne odoslaná!")}</span>
           </div>
         ),
-        error: (err) => (
+        error: () => (
           <div className="flex items-center gap-2">
             <X className="h-4 w-4 text-red-500" />
-            <span>{err.message || 'Nastala chyba pri odosielaní správy.'}</span>
+            <span>{t(locale, 'Nastala chyba pri odosielaní správy.')}</span>
           </div>
         ),
       });
@@ -64,35 +66,35 @@ export function ContactFormContent() {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="firstName">Meno</Label>
-            <Input name="firstName" id="firstName" placeholder="Vaše meno" required />
+            <Label htmlFor="firstName">{t(locale, "Meno")}</Label>
+            <Input name="firstName" id="firstName" placeholder={t(locale, "Vaše meno")} required />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="lastName">Priezvisko</Label>
-            <Input name="lastName" id="lastName" placeholder="Vaše priezvisko" required />
+            <Label htmlFor="lastName">{t(locale, "Priezvisko")}</Label>
+            <Input name="lastName" id="lastName" placeholder={t(locale, "Vaše priezvisko")} required />
           </div>
         </div>
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
-          <Input name="email" id="email" type="email" placeholder="vas@email.sk" required />
+          <Input name="email" id="email" type="email" placeholder="name@example.com" required />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="phone">Telefón</Label>
-          <Input name="phone" id="phone" type="tel" placeholder="+421 xxx xxx xxx" required />
+          <Label htmlFor="phone">{t(locale, "Telefón")}</Label>
+          <Input name="phone" id="phone" type="tel" placeholder="+421 900 000 000" required />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="message">Správa</Label>
+          <Label htmlFor="message">{t(locale, "Správa")}</Label>
           <Textarea
             name="message"
             id="message"
-            placeholder="Opíšte váš problém alebo požiadavku..."
+            placeholder={t(locale, "Opíšte váš problém alebo požiadavku...")}
             className="min-h-[100px]"
             required
           />
         </div>
         <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
           <CheckCircle className="h-4 w-4 mr-2" />
-          Odoslať správu
+          {t(locale, "Odoslať správu")}
         </Button>
       </form>
     </CardContent>

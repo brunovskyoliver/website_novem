@@ -1,9 +1,11 @@
 "use client";
 
+import { t, type Locale } from "@/lib/i18n"
+
 import { Button } from "@/components/ui/button"
 import { ArrowDown } from "lucide-react"
 
-export function ScrollSupportButton() {
+export function ScrollSupportButton({ locale }: { locale: Locale }) {
   const scrollToSupport = () => {
     const element = document.getElementById('remote-support');
     if (element) {
@@ -25,7 +27,7 @@ export function ScrollSupportButton() {
       size="lg"
     >
       <ArrowDown className="h-5 w-5 mr-2" />
-      Vzdialená podpora
+      {t(locale, "Vzdialená podpora")}
     </Button>
   );
 }
